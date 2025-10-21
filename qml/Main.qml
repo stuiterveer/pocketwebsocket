@@ -119,6 +119,8 @@ MainView {
                 id: messageModel
             }
             delegate: messageDelegate
+
+            onCountChanged: positionViewAtEnd()
         }
 
         TextField {
