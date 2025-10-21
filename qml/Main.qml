@@ -71,7 +71,7 @@ MainView {
         WebSocket {
             id: socket
             onTextMessageReceived: {
-                messageBox.text = messageBox.text + "\nReceived message: " + message
+                messageBox.text = messageBox.text + "\n" + i18n.tr('Received message') + ": " + message
             }
             onStatusChanged: if (socket.status == WebSocket.Error) {
                                 console.log("Error: " + socket.errorString)
@@ -97,5 +97,44 @@ MainView {
             anchors.centerIn: parent
         }
 
+        TextField {
+            anchors {
+                bottom: keyboard.top
+                left: parent.left
+                right: sendNewMessage.left
+            }
+            id: newMessage
+            placeholderText: i18n.tr('Type new message...')
+
+            height: units.gu(4)
+        }
+
+        Button {
+            anchors {
+                bottom: keyboard.top
+                right: parent.right
+            }
+            id: sendNewMessage
+            text: i18n.tr('Send')
+ 
+            height: units.gu(4)
+            width: parent.width / 4
+
+            onClicked: {
+                socket.sendTextMessage(newMessage.text)
+                messageBox.text = messageBox.text + "\n" + i18n.tr('Sent message') + ": " + newMessage.text
+            }
+        }
+
+        Rectangle {
+            anchors {
+                bottom: parent.bottom
+                left: parent.left
+                right: parent.right
+            }
+            id: keyboard
+            height: LomiriApplication.inputMethod.keyboardRectangle.height
+            color: backgroundColor
+        }
     }
 }
