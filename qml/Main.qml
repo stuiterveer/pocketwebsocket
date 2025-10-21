@@ -34,7 +34,7 @@ MainView {
 
         header: PageHeader {
             id: header
-            title: i18n.tr('Pocket Websocket')
+            title: i18n.tr('Pocket WebSocket')
         }
 
         TextField {

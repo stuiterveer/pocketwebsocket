@@ -1,5 +1,5 @@
 [Desktop Entry]
-_Name=Pocket Websocket
+_Name=Pocket WebSocket
 Exec=qmlscene %U qml/Main.qml
 Icon=assets/logo.svg
 Terminal=false

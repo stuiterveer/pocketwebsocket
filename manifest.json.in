@@ -2,7 +2,7 @@
     "name": "pocketwebsocket.stuiterveer",
     "description": "A QML WebSocket client, right from your pocket!",
     "architecture": "@CLICK_ARCH@",
-    "title": "Pocket Websocket",
+    "title": "Pocket WebSocket",
     "hooks": {
         "pocketwebsocket": {
             "apparmor": "pocketwebsocket.apparmor",

@@ -1,4 +1,4 @@
-# Pocket Websocket
+# Pocket WebSocket
 
 A QML WebSocket client, right from your pocket!
 
