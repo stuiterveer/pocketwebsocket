@@ -1,0 +1,15 @@
+{
+    "name": "pocketwebsocket.stuiterveer",
+    "description": "A QML WebSocket client, right from your pocket!",
+    "architecture": "@CLICK_ARCH@",
+    "title": "Pocket Websocket",
+    "hooks": {
+        "pocketwebsocket": {
+            "apparmor": "pocketwebsocket.apparmor",
+            "desktop":  "pocketwebsocket.desktop"
+        }
+    },
+    "version": "0.0.1",
+    "maintainer": "stuiterveer <admin@stuiterveer.com>",
+    "framework" : "@CLICK_FRAMEWORK@"
+}
