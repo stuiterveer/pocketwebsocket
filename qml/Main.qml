@@ -71,30 +71,54 @@ MainView {
         WebSocket {
             id: socket
             onTextMessageReceived: {
-                messageBox.text = messageBox.text + "\n" + i18n.tr('Received message') + ": " + message
+                messageModel.append({
+                    messageType: i18n.tr('Received'),
+                    messageContents: message
+                })
             }
             onStatusChanged: if (socket.status == WebSocket.Error) {
                                 console.log("Error: " + socket.errorString)
                             } else if (socket.status == WebSocket.Open) {
-                                socket.sendTextMessage("Hello World")
-                            } else if (socket.status == WebSocket.Closed) {
-                                messageBox.text += "\nSocket closed"
+                                messageModel.append({
+                                    messageType: i18n.tr('Connected to'),
+                                    messageContents: websocketUrl.text
+                                })
                             }
             active: false
         }
 
-        Label {
+        Component {
+            id: messageDelegate
+
+            ListItem {
+                height: txt.implicitHeight
+                width: txt.implicitWidth
+
+                divider {
+                    visible: false
+                }
+
+                Label {
+                    id: txt
+                    text: '<b>' + messageType + ':</b> ' + messageContents
+                }
+            }
+        }
+
+        ListView {
             anchors {
+                top: websocketUrl.bottom
                 left: parent.left
                 right: parent.right
-                top: websocketUrl.bottom
-                bottom: parent.bottom
+                bottom: newMessage.top
             }
-            id: messageBox
-            width: parent.width
-            wrapMode: Text.WrapAnywhere
-            text: socket.status == WebSocket.Open ? i18n.tr("Sending...") : i18n.tr("Welcome!")
-            anchors.centerIn: parent
+
+            id: messageView
+            
+            model: ListModel {
+                id: messageModel
+            }
+            delegate: messageDelegate
         }
 
         TextField {
@@ -122,7 +146,10 @@ MainView {
 
             onClicked: {
                 socket.sendTextMessage(newMessage.text)
-                messageBox.text = messageBox.text + "\n" + i18n.tr('Sent message') + ": " + newMessage.text
+                messageModel.append({
+                    messageType: i18n.tr('Sent'),
+                    messageContents: newMessage.text
+                })
             }
         }
 
