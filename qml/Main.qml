@@ -42,7 +42,6 @@ MainView {
                 top: header.bottom
                 left: parent.left
                 right: websocketConnect.left
-                //bottom: parent.bottom
             }
             id: websocketUrl
             placeholderText: i18n.tr('Enter WebSocket URL...')
@@ -54,9 +53,7 @@ MainView {
         Button {
             anchors {
                 top: header.bottom
-                //left: parent.left
                 right: parent.right
-                //bottom: parent.bottom
             }
             id: websocketConnect
             text: i18n.tr('Connect')
@@ -85,6 +82,7 @@ MainView {
                             }
             active: false
         }
+
         Text {
             anchors {
                 left: parent.left
@@ -95,7 +93,7 @@ MainView {
             id: messageBox
             width: parent.width
             wrapMode: Text.WrapAnywhere
-            text: socket.status == WebSocket.Open ? qsTr("Sending...") : qsTr("Welcome!")
+            text: socket.status == WebSocket.Open ? i18n.tr("Sending...") : i18n.tr("Welcome!")
             anchors.centerIn: parent
         }
 
