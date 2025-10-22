@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pocketwebsocket.stuiterveer\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-10-21 20:29+0000\n"
+"POT-Creation-Date: 2025-10-22 08:10+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -37,14 +37,14 @@ msgstr ""
 msgid "Connected to"
 msgstr ""
 
-#: ../qml/Main.qml:133
+#: ../qml/Main.qml:136
 msgid "Type new message..."
 msgstr ""
 
-#: ../qml/Main.qml:144
+#: ../qml/Main.qml:147
 msgid "Send"
 msgstr ""
 
-#: ../qml/Main.qml:152
+#: ../qml/Main.qml:155
 msgid "Sent"
 msgstr ""

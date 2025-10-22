@@ -99,6 +99,9 @@ MainView {
                 }
 
                 Label {
+                    width: root.width
+                    wrapMode: Text.Wrap
+
                     id: txt
                     text: '<b>' + messageType + ':</b> ' + messageContents
                 }
