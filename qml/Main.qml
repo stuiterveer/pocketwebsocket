@@ -56,10 +56,10 @@ MainView {
                 right: parent.right
             }
             id: websocketConnect
-            text: i18n.tr('Connect')
+            iconName: 'tick'
  
             height: units.gu(4)
-            width: parent.width / 3
+            width: height
  
             onClicked: {
                 socket.active = false
