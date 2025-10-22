@@ -144,10 +144,10 @@ MainView {
                 right: parent.right
             }
             id: sendNewMessage
-            text: i18n.tr('Send')
+            iconName: 'telegram-symbolic'
  
             height: units.gu(4)
-            width: parent.width / 4
+            width: height
 
             onClicked: {
                 socket.sendTextMessage(newMessage.text)
