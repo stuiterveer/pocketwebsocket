@@ -89,13 +89,17 @@ MainView {
                             } else if (socket.status == WebSocket.Open) {
                                 messageModel.append({
                                     messageType: 'connected',
-                                    messageContents: websocketUrl.text
+                                    messageContents: socket.url.toString()
                                 })
                                 newMessage.enabled = true
                                 sendNewMessage.enabled = true
                             } else if (socket.status == WebSocket.Closed) {
                                 newMessage.enabled = false
                                 sendNewMessage.enabled = false
+                                messageModel.append({
+                                    messageType: 'disconnected',
+                                    messageContents: socket.url.toString()
+                                })
                             }
             active: false
         }
@@ -110,7 +114,24 @@ MainView {
                 }
 
                 Icon {
-                    name: messageType == 'received' ? 'previous' : (messageType == 'connected' ? 'tick' : 'next')
+                    name: switch (messageType) {
+                        case 'received':
+                            return 'previous';
+                            break;
+                        case 'sent':
+                            return 'next';
+                            break;
+                        case 'connected':
+                            return 'tick';
+                            break;
+                        case 'disconnected':
+                            return 'stop';
+                            break;
+                        default:
+                            // Should never happen, show question mark to indicate unknown icon
+                            return 'dialog-question-symbolic';
+                            break;
+                    }
                     height: txt.implicitHeight
                 }
 
