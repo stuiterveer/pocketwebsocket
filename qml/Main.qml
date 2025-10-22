@@ -80,7 +80,7 @@ MainView {
             id: socket
             onTextMessageReceived: {
                 messageModel.append({
-                    messageType: i18n.tr('Received'),
+                    messageType: 'received',
                     messageContents: message
                 })
             }
@@ -98,20 +98,32 @@ MainView {
         Component {
             id: messageDelegate
 
-            ListItem {
-                height: txt.implicitHeight
-                width: txt.implicitWidth
-
-                divider {
-                    visible: false
+            Row {
+                Icon {
+                    name: 'phone-smartphone-symbolic'
+                    height: txt.implicitHeight
                 }
 
-                Label {
-                    width: root.width
-                    wrapMode: Text.Wrap
+                Icon {
+                    name: messageType == 'received' ? 'previous' : 'next'
+                    height: txt.implicitHeight
+                }
 
-                    id: txt
-                    text: '<b>' + messageType + ':</b> ' + messageContents
+                ListItem {
+                    height: txt.implicitHeight
+                    width: txt.implicitWidth
+
+                    divider {
+                        visible: false
+                    }
+
+                    Label {
+                        width: root.width
+                        wrapMode: Text.Wrap
+
+                        id: txt
+                        text: messageContents
+                    }
                 }
             }
         }
@@ -160,7 +172,7 @@ MainView {
             onClicked: {
                 socket.sendTextMessage(newMessage.text)
                 messageModel.append({
-                    messageType: i18n.tr('Sent'),
+                    messageType: 'sent',
                     messageContents: newMessage.text
                 })
             }
