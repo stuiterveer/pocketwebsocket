@@ -91,6 +91,11 @@ MainView {
                                     messageType: 'connected',
                                     messageContents: websocketUrl.text
                                 })
+                                newMessage.enabled = true
+                                sendNewMessage.enabled = true
+                            } else if (socket.status == WebSocket.Closed) {
+                                newMessage.enabled = false
+                                sendNewMessage.enabled = false
                             }
             active: false
         }
@@ -156,6 +161,8 @@ MainView {
             placeholderText: i18n.tr('Type new message...')
 
             height: units.gu(4)
+
+            enabled: false
         }
 
         Button {
@@ -168,6 +175,8 @@ MainView {
             height: units.gu(4)
             width: height
             color: isDark ? 'Light Green' : 'Green'
+
+            enabled: false
 
             onClicked: {
                 socket.sendTextMessage(newMessage.text)
