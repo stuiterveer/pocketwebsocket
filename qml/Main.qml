@@ -110,7 +110,7 @@ MainView {
             Row {
                 Icon {
                     name: 'phone-smartphone-symbolic'
-                    height: txt.implicitHeight
+                    height: txt.font.pixelSize
                 }
 
                 Icon {
@@ -132,7 +132,7 @@ MainView {
                             return 'dialog-question-symbolic';
                             break;
                     }
-                    height: txt.implicitHeight
+                    height: txt.font.pixelSize
                 }
 
                 ListItem {
