@@ -144,7 +144,7 @@ MainView {
                 right: parent.right
             }
             id: sendNewMessage
-            iconName: 'telegram-symbolic'
+            iconName: 'send'
  
             height: units.gu(4)
             width: height
