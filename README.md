@@ -1,3 +1,5 @@
+[![OpenStore](https://next.open-store.io/badges/en_US.svg)](https://next.open-store.io/app/pocketwebsocket.stuiterveer/)
+
 # Pocket WebSocket
 
 A QML WebSocket client, right from your pocket!
