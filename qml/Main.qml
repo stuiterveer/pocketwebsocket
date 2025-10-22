@@ -175,6 +175,7 @@ MainView {
                     messageType: 'sent',
                     messageContents: newMessage.text
                 })
+                newMessage.text = ''
             }
         }
 
