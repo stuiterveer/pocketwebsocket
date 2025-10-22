@@ -56,7 +56,6 @@ MainView {
                 right: parent.right
             }
             id: websocketConnect
-            iconName: 'tick'
  
             height: units.gu(4)
             width: height
@@ -66,6 +65,11 @@ MainView {
                 socket.url = websocketUrl.text
                 socket.active = true
             }
+        }
+
+        Icon {
+            name: 'tick'
+            anchors.fill: websocketConnect
         }
 
         WebSocket {
@@ -144,7 +148,6 @@ MainView {
                 right: parent.right
             }
             id: sendNewMessage
-            iconName: 'send'
  
             height: units.gu(4)
             width: height
@@ -156,6 +159,11 @@ MainView {
                     messageContents: newMessage.text
                 })
             }
+        }
+
+        Icon {
+            name: 'send'
+            anchors.fill: sendNewMessage
         }
 
         Rectangle {
