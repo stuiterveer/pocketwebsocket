@@ -29,6 +29,8 @@ MainView {
     width: units.gu(45)
     height: units.gu(75)
 
+    readonly property bool isDark: theme.name === 'Lomiri.Components.Themes.SuruDark'
+
     Page {
         anchors.fill: parent
 
@@ -59,6 +61,7 @@ MainView {
  
             height: units.gu(4)
             width: height
+            color: isDark ? 'Light Green' : 'Green'
  
             onClicked: {
                 socket.active = false
@@ -70,6 +73,7 @@ MainView {
         Icon {
             name: 'tick'
             anchors.fill: websocketConnect
+            color: isDark ? 'Jet' : 'White'
         }
 
         WebSocket {
@@ -151,6 +155,7 @@ MainView {
  
             height: units.gu(4)
             width: height
+            color: isDark ? 'Light Green' : 'Green'
 
             onClicked: {
                 socket.sendTextMessage(newMessage.text)
@@ -164,6 +169,7 @@ MainView {
         Icon {
             name: 'send'
             anchors.fill: sendNewMessage
+            color: isDark ? 'Jet' : 'White'
         }
 
         Rectangle {
