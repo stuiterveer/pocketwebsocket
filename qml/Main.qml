@@ -88,7 +88,7 @@ MainView {
                                 console.log("Error: " + socket.errorString)
                             } else if (socket.status == WebSocket.Open) {
                                 messageModel.append({
-                                    messageType: i18n.tr('Connected to'),
+                                    messageType: 'connected',
                                     messageContents: websocketUrl.text
                                 })
                             }
@@ -105,7 +105,7 @@ MainView {
                 }
 
                 Icon {
-                    name: messageType == 'received' ? 'previous' : 'next'
+                    name: messageType == 'received' ? 'previous' : (messageType == 'connected' ? 'tick' : 'next')
                     height: txt.implicitHeight
                 }
 
