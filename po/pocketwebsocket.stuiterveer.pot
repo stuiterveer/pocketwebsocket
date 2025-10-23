@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pocketwebsocket.stuiterveer\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-10-23 15:30+0000\n"
+"POT-Creation-Date: 2025-10-23 15:40+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -33,7 +33,7 @@ msgstr ""
 msgid "Hide message"
 msgstr ""
 
-#: ../qml/ManageServer.qml:11 ../qml/ManageServer.qml:59
+#: ../qml/ManageServer.qml:11 ../qml/ManageServer.qml:16
 #: ../qml/ServerList.qml:14
 msgid "Add server"
 msgstr ""
@@ -42,16 +42,16 @@ msgstr ""
 msgid "Edit server"
 msgstr ""
 
-#: ../qml/ManageServer.qml:23
+#: ../qml/ManageServer.qml:16
+msgid "Save changes"
+msgstr ""
+
+#: ../qml/ManageServer.qml:53
 msgid "Server name"
 msgstr ""
 
-#: ../qml/ManageServer.qml:41
+#: ../qml/ManageServer.qml:71
 msgid "Server address"
-msgstr ""
-
-#: ../qml/ManageServer.qml:59
-msgid "Save changes"
 msgstr ""
 
 #: ../qml/ServerConnect.qml:15
