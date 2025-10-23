@@ -14,6 +14,7 @@ Page {
                 text: i18n.tr('Add server')
 
                 onTriggered: {
+                    currentlyEditing = -1
                     var addServerPage = pageStack.push(Qt.resolvedUrl('AddServer.qml'))
                     addServerPage.serverAdded.connect(reloadServers)
                 }
@@ -41,6 +42,25 @@ Page {
                             serverList.splice(serverIndex, 1)
                             serverListChanged()
                             reloadServers()
+                        }
+                    }
+                ]
+            }
+            trailingActions: ListItemActions {
+                actions: [
+                    Action {
+                        iconName: "edit"
+                        onTriggered: {
+                            currentlyEditing = serverIndex
+                            var addServerPage = pageStack.push(Qt.resolvedUrl('AddServer.qml'))
+                            addServerPage.serverAdded.connect(reloadServers)
+                        }
+                    },
+                    Action {
+                        iconName: "filters"
+                        onTriggered: {
+                            currentlyEditing = serverIndex
+                            pageStack.push(Qt.resolvedUrl('CommandList.qml'))
                         }
                     }
                 ]

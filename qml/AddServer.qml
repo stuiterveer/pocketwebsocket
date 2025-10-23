@@ -8,7 +8,7 @@ Page {
 
     header: PageHeader {
         id: header
-        title: i18n.tr('Add server')
+        title: currentlyEditing < 0 ? i18n.tr('Add server') : i18n.tr('Edit server')
     }
 
     Row {
@@ -25,6 +25,7 @@ Page {
 
         TextField {
             id: serverName
+            text: currentlyEditing < 0 ? '' : serverList[currentlyEditing]['name']
         }
     }
 
@@ -42,6 +43,7 @@ Page {
 
         TextField {
             id: serverAddress
+            text: currentlyEditing < 0 ? '' : serverList[currentlyEditing]['url']
         }
     }
 
@@ -54,13 +56,20 @@ Page {
         height: units.gu(4)
         color: isDark ? 'Light Green' : 'Green'
 
-        text: i18n.tr('Add server')
+        text: currentlyEditing < 0 ? i18n.tr('Add server') : i18n.tr('Save changes')
 
         onClicked: {
-            serverList.push({
-                'name': serverName.text,
-                'url': serverAddress.text
-            })
+            if (currentlyEditing < 0) {
+                serverList.push({
+                    'name': serverName.text,
+                    'url': serverAddress.text
+                })
+            } else {
+                serverList[currentlyEditing] = {
+                    'name': serverName.text,
+                    'url': serverAddress.text
+                }
+            }
             serverListChanged()
             serverAdded()
             pageStack.pop('AddServer.qml')

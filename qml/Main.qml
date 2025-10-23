@@ -34,6 +34,8 @@ MainView {
         'url': ''
     }
 
+    property var currentlyEditing: -1
+
     property var serverList: []
 
     Settings {
