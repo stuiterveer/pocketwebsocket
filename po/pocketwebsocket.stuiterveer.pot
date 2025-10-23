@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pocketwebsocket.stuiterveer\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-10-23 17:28+0000\n"
+"POT-Creation-Date: 2025-10-23 20:32+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,20 +17,36 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../qml/CommandList.qml:9
+#: ../qml/CommandList.qml:11
 msgid "Manage commands"
 msgstr ""
 
-#: ../qml/CommandList.qml:14
+#: ../qml/CommandList.qml:16
 msgid "Save commands"
 msgstr ""
 
-#: ../qml/CommandList.qml:53
+#: ../qml/CommandList.qml:28
+msgid "Add command"
+msgstr ""
+
+#: ../qml/CommandList.qml:71
 msgid "After connecting, send"
 msgstr ""
 
-#: ../qml/CommandList.qml:87
+#: ../qml/CommandList.qml:105
 msgid "Hide message"
+msgstr ""
+
+#: ../qml/CommandList.qml:154
+msgid "When receiving"
+msgstr ""
+
+#: ../qml/CommandList.qml:178
+msgid "Send back"
+msgstr ""
+
+#: ../qml/CommandList.qml:202
+msgid "Hide"
 msgstr ""
 
 #: ../qml/ManageServer.qml:11 ../qml/ManageServer.qml:16
