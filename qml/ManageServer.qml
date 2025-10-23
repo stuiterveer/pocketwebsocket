@@ -65,10 +65,8 @@ Page {
                     'url': serverAddress.text
                 })
             } else {
-                serverList[currentlyEditing] = {
-                    'name': serverName.text,
-                    'url': serverAddress.text
-                }
+                serverList[currentlyEditing]['name'] = serverName.text
+                serverList[currentlyEditing]['url'] = serverAddress.text
             }
             serverListChanged()
             serverAdded()
