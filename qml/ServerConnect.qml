@@ -33,10 +33,38 @@ Page {
 
         url: serverList[currentlySelected]['url']
         onTextMessageReceived: {
-            messageModel.append({
-                messageType: 'received',
-                messageContents: message
-            })
+            var pingPongFound = false
+            for (var i = 0; i < serverList[currentlySelected]['commandList']['pingPong'].length; i++) {
+                var currentItem = serverList[currentlySelected]['commandList']['pingPong'][i]
+                if (currentItem['active']){
+                    if (message == currentItem['ping']) {
+                        if (!currentItem['suppressPing']) {
+                            messageModel.append({
+                                messageType: 'received',
+                                messageContents: message
+                            })
+                        }
+
+                        socket.sendTextMessage(currentItem['pong'])
+                        if (!currentItem['suppressPong']) {
+                            messageModel.append({
+                                messageType: 'sent',
+                                messageContents: currentItem['pong']
+                            })
+                        }
+
+                        pingPongFound = true
+                        break
+                    }
+                }
+            }
+
+            if (!pingPongFound) {
+                messageModel.append({
+                    messageType: 'received',
+                    messageContents: message
+                })
+            }
         }
         onStatusChanged: {
             if (socket.status == WebSocket.Error) {
