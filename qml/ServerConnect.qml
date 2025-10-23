@@ -152,7 +152,12 @@ Page {
         enabled: false
 
         onClicked: {
-            
+            socket.sendTextMessage(newMessage.text)
+            messageModel.append({
+                messageType: 'sent',
+                messageContents: newMessage.text
+            })
+            newMessage.text = ''
         }
     }
 
