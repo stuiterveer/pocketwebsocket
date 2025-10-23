@@ -16,6 +16,7 @@
 
 import QtQuick 2.7
 import Lomiri.Components 1.3
+import Qt.labs.settings 1.0
 
 MainView {
     id: root
@@ -33,12 +34,12 @@ MainView {
         'url': ''
     }
 
-    property var serverList: [
-        {
-            'name': 'WebSocket echo',
-            'url': 'wss://echo.websocket.org'
-        }
-    ]
+    property var serverList: []
+
+    Settings {
+        id: settings
+        property alias serverList: root.serverList
+    }
 
     PageStack {
         id: pageStack

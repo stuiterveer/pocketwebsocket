@@ -61,6 +61,7 @@ Page {
                 'name': serverName.text,
                 'url': serverAddress.text
             })
+            serverListChanged()
             serverAdded()
             pageStack.pop('AddServer.qml')
         }
