@@ -62,7 +62,14 @@ Page {
             if (currentlySelected < 0) {
                 serverList.push({
                     'name': serverName.text,
-                    'url': serverAddress.text
+                    'url': serverAddress.text,
+                    'commandList': {
+                        'onConnect': {
+                            'active': false,
+                            'message': ''
+                        },
+                        'pingPong': []
+                    }
                 })
             } else {
                 serverList[currentlySelected]['name'] = serverName.text
