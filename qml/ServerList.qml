@@ -15,8 +15,8 @@ Page {
 
                 onTriggered: {
                     currentlyEditing = -1
-                    var addServerPage = pageStack.push(Qt.resolvedUrl('AddServer.qml'))
-                    addServerPage.serverAdded.connect(reloadServers)
+                    var manageServerPage = pageStack.push(Qt.resolvedUrl('ManageServer.qml'))
+                    manageServerPage.serverAdded.connect(reloadServers)
                 }
             }
         ]
@@ -52,8 +52,8 @@ Page {
                         iconName: "edit"
                         onTriggered: {
                             currentlyEditing = serverIndex
-                            var addServerPage = pageStack.push(Qt.resolvedUrl('AddServer.qml'))
-                            addServerPage.serverAdded.connect(reloadServers)
+                            var manageServerPage = pageStack.push(Qt.resolvedUrl('ManageServer.qml'))
+                            manageServerPage.serverAdded.connect(reloadServers)
                         }
                     },
                     Action {
