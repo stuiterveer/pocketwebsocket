@@ -7,6 +7,15 @@ Page {
     header: PageHeader {
         id: header
         title: 'Pocket WebSocket'
+
+        trailingActionBar.actions: [
+            Action {
+                iconName: 'list-add'
+                text: i18n.tr('Add server')
+
+                onTriggered: pageStack.push(Qt.resolvedUrl('AddServer.qml'))
+            }
+        ]
     }
 
     Component {
