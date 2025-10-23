@@ -16,7 +16,7 @@ Page {
                 onTriggered: {
                     currentlySelected = -1
                     var manageServerPage = pageStack.push(Qt.resolvedUrl('ManageServer.qml'))
-                    manageServerPage.serverAdded.connect(reloadServers)
+                    manageServerPage.serverManaged.connect(reloadServers)
                 }
             }
         ]
@@ -52,7 +52,7 @@ Page {
                         onTriggered: {
                             currentlySelected = serverIndex
                             var manageServerPage = pageStack.push(Qt.resolvedUrl('ManageServer.qml'))
-                            manageServerPage.serverAdded.connect(reloadServers)
+                            manageServerPage.serverManaged.connect(reloadServers)
                         }
                     },
                     Action {

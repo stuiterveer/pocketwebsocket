@@ -2,7 +2,7 @@ import QtQuick 2.7
 import Lomiri.Components 1.3
 
 Page {
-    signal serverAdded()
+    signal serverManaged()
 
     anchors.fill: parent
 
@@ -76,7 +76,7 @@ Page {
                 serverList[currentlySelected]['url'] = serverAddress.text
             }
             serverListChanged()
-            serverAdded()
+            serverManaged()
             pageStack.pop('AddServer.qml')
         }
     }
