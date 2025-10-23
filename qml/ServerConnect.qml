@@ -51,10 +51,12 @@ Page {
 
                 if (serverList[currentlySelected]['commandList']['onConnect']['active']) {
                     socket.sendTextMessage(serverList[currentlySelected]['commandList']['onConnect']['message'])
-                    messageModel.append({
-                        messageType: 'sent',
-                        messageContents: serverList[currentlySelected]['commandList']['onConnect']['message']
-                    })
+                    if (!serverList[currentlySelected]['commandList']['onConnect']['suppress']){
+                        messageModel.append({
+                            messageType: 'sent',
+                            messageContents: serverList[currentlySelected]['commandList']['onConnect']['message']
+                        })
+                    }
                 }
             } else if (socket.status == WebSocket.Closed) {
                 newMessage.enabled = false
