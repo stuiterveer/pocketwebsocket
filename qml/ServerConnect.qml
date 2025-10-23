@@ -30,6 +30,8 @@ Page {
 
     WebSocket {
         id: socket
+
+        url: serverList[currentlySelected]['url']
         onTextMessageReceived: {
             messageModel.append({
                 messageType: 'received',
@@ -55,7 +57,7 @@ Page {
                 })
             }
         }
-        active: false
+        active: true
     }
 
     Component {
@@ -178,10 +180,5 @@ Page {
         id: keyboard
         height: LomiriApplication.inputMethod.keyboardRectangle.height
         color: backgroundColor
-    }
-
-    Component.onCompleted: {
-        socket.url = serverList[currentlySelected]['url']
-        socket.active = true
     }
 }
