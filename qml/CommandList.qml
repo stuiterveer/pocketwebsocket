@@ -28,14 +28,16 @@ Page {
                 text: i18n.tr('Add command')
 
                 onTriggered: {
-                    pingPongList.push({
+                    var newPingPong = {
                         'ping': '',
                         'pong': '',
                         'active': false,
                         'suppressPing': false,
                         'suppressPong': false
-                    })
-                    commandModel.append(pingPongList.slice(-1))
+                    }
+                    pingPongList.push(newPingPong)
+                    newPingPong['pingPongIndex'] = pingPongList.length - 1
+                    commandModel.append(newPingPong)
                 }
             }
         ]
