@@ -19,6 +19,7 @@ Page {
                     serverList[currentlySelected]['commandList']['onConnect']['active'] = enableSendOnConnect.checked
                     serverList[currentlySelected]['commandList']['onConnect']['message'] = toSendOnConnect.text
                     serverList[currentlySelected]['commandList']['onConnect']['suppress'] = hideSendOnConnect.checked
+                    serverList[currentlySelected]['commandList']['pingPong'] = pingPongList
                     serverListChanged()
                     pageStack.pop('CommandList.qml')
                 }
@@ -123,6 +124,8 @@ Page {
                 }
 
                 checked: active
+
+                onCheckedChanged: pingPongList[pingPongIndex]['active'] = enablePingPong.checked
             }
 
             Label {
@@ -146,6 +149,8 @@ Page {
                 }
 
                 text: ping
+
+                onDisplayTextChanged: pingPongList[pingPongIndex]['ping'] = pingContent.text
             }
 
             Label {
@@ -170,6 +175,8 @@ Page {
                 }
 
                 text: pong
+
+                onDisplayTextChanged: pingPongList[pingPongIndex]['pong'] = pongContent.text
             }
 
             Label {
@@ -192,6 +199,8 @@ Page {
                 }
 
                 checked: suppressPing
+
+                onCheckedChanged: pingPongList[pingPongIndex]['suppressPing'] = hidePing.checked
             }
 
             Label {
@@ -214,6 +223,8 @@ Page {
                 }
 
                 checked: suppressPong
+
+                onCheckedChanged: pingPongList[pingPongIndex]['suppressPong'] = hidePong.checked
             }
 
             Label {

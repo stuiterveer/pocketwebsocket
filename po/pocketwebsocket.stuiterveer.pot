@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pocketwebsocket.stuiterveer\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-10-23 21:23+0000\n"
+"POT-Creation-Date: 2025-10-23 21:34+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,27 +25,27 @@ msgstr ""
 msgid "Save commands"
 msgstr ""
 
-#: ../qml/CommandList.qml:28
+#: ../qml/CommandList.qml:29
 msgid "Add command"
 msgstr ""
 
-#: ../qml/CommandList.qml:73
+#: ../qml/CommandList.qml:74
 msgid "After connecting, send"
 msgstr ""
 
-#: ../qml/CommandList.qml:107
+#: ../qml/CommandList.qml:108
 msgid "Hide message"
 msgstr ""
 
-#: ../qml/CommandList.qml:135
+#: ../qml/CommandList.qml:138
 msgid "When receiving"
 msgstr ""
 
-#: ../qml/CommandList.qml:159
+#: ../qml/CommandList.qml:164
 msgid "Send back"
 msgstr ""
 
-#: ../qml/CommandList.qml:183
+#: ../qml/CommandList.qml:190
 msgid "Hide"
 msgstr ""
 
