@@ -16,6 +16,7 @@ Page {
                 onTriggered: {
                     serverList[currentlySelected]['commandList']['onConnect']['active'] = enableSendOnConnect.checked
                     serverList[currentlySelected]['commandList']['onConnect']['message'] = toSendOnConnect.text
+                    serverList[currentlySelected]['commandList']['onConnect']['suppress'] = hideSendOnConnect.checked
                     pageStack.pop('CommandList.qml')
                 }
             }
@@ -28,6 +29,7 @@ Page {
             left: parent.left
             right: parent. right
         }
+        height: labelSendOnConnect.implicitHeight + toSendOnConnect.implicitHeight + hideSendOnConnect.implicitHeight
 
         CheckBox {
             id: enableSendOnConnect
@@ -61,6 +63,27 @@ Page {
             }
 
             text: serverList[currentlySelected]['commandList']['onConnect']['message']
+        }
+
+        CheckBox {
+            id: hideSendOnConnect
+            anchors {
+                left: enableSendOnConnect.right
+                top: toSendOnConnect.bottom
+                leftMargin: 10
+            }
+
+            checked: serverList[currentlySelected]['commandList']['onConnect']['suppress']
+        }
+
+        Label {
+            anchors {
+                left: hideSendOnConnect.right
+                top: toSendOnConnect.bottom
+                leftMargin: 10
+            }
+
+            text: i18n.tr('Hide message')
         }
     }
 }
