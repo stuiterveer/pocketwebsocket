@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pocketwebsocket.stuiterveer\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-10-23 10:12+0000\n"
+"POT-Creation-Date: 2025-10-23 10:19+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,15 +17,15 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../qml/AddServer.qml:9 ../qml/AddServer.qml:55 ../qml/ServerList.qml:14
+#: ../qml/AddServer.qml:11 ../qml/AddServer.qml:57 ../qml/ServerList.qml:14
 msgid "Add server"
 msgstr ""
 
-#: ../qml/AddServer.qml:21
+#: ../qml/AddServer.qml:23
 msgid "Server name"
 msgstr ""
 
-#: ../qml/AddServer.qml:38
+#: ../qml/AddServer.qml:40
 msgid "Server address"
 msgstr ""
 

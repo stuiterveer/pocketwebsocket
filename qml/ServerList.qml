@@ -13,7 +13,10 @@ Page {
                 iconName: 'list-add'
                 text: i18n.tr('Add server')
 
-                onTriggered: pageStack.push(Qt.resolvedUrl('AddServer.qml'))
+                onTriggered: {
+                    var addServerPage = pageStack.push(Qt.resolvedUrl('AddServer.qml'))
+                    addServerPage.serverAdded.connect(reloadServers)
+                }
             }
         ]
     }
@@ -47,12 +50,16 @@ Page {
         delegate: serverDelegate
 
         Component.onCompleted: {
-            serverModel.clear()
+            reloadServers()
+        }
+    }
 
-            for (var i = 0; i < serverList.length; i++)
-            {
-                serverModel.append(serverList[i])
-            }
+    function reloadServers() {
+        serverModel.clear()
+
+        for (var i = 0; i < serverList.length; i++)
+        {
+            serverModel.append(serverList[i])
         }
     }
 }

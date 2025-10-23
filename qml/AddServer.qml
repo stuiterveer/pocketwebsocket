@@ -2,6 +2,8 @@ import QtQuick 2.7
 import Lomiri.Components 1.3
 
 Page {
+    signal serverAdded()
+
     anchors.fill: parent
 
     header: PageHeader {
@@ -59,6 +61,7 @@ Page {
                 'name': serverName.text,
                 'url': serverAddress.text
             })
+            serverAdded()
             pageStack.pop('AddServer.qml')
         }
     }
