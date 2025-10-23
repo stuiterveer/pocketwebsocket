@@ -48,6 +48,14 @@ Page {
                 })
                 newMessage.enabled = true
                 sendNewMessage.enabled = true
+
+                if (serverList[currentlySelected]['commandList']['onConnect']['active']) {
+                    socket.sendTextMessage(serverList[currentlySelected]['commandList']['onConnect']['message'])
+                    messageModel.append({
+                        messageType: 'sent',
+                        messageContents: serverList[currentlySelected]['commandList']['onConnect']['message']
+                    })
+                }
             } else if (socket.status == WebSocket.Closed) {
                 newMessage.enabled = false
                 sendNewMessage.enabled = false
