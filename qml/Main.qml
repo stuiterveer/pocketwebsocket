@@ -29,12 +29,7 @@ MainView {
 
     readonly property bool isDark: theme.name === 'Lomiri.Components.Themes.SuruDark'
 
-    property var connectionDetails: {
-        'name': '',
-        'url': ''
-    }
-
-    property var currentlyEditing: -1
+    property var currentlySelected: -1
 
     property var serverList: []
 

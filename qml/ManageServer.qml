@@ -8,7 +8,7 @@ Page {
 
     header: PageHeader {
         id: header
-        title: currentlyEditing < 0 ? i18n.tr('Add server') : i18n.tr('Edit server')
+        title: currentlySelected < 0 ? i18n.tr('Add server') : i18n.tr('Edit server')
     }
 
     Row {
@@ -25,7 +25,7 @@ Page {
 
         TextField {
             id: serverName
-            text: currentlyEditing < 0 ? '' : serverList[currentlyEditing]['name']
+            text: currentlySelected < 0 ? '' : serverList[currentlySelected]['name']
         }
     }
 
@@ -43,7 +43,7 @@ Page {
 
         TextField {
             id: serverAddress
-            text: currentlyEditing < 0 ? '' : serverList[currentlyEditing]['url']
+            text: currentlySelected < 0 ? '' : serverList[currentlySelected]['url']
         }
     }
 
@@ -56,17 +56,17 @@ Page {
         height: units.gu(4)
         color: isDark ? 'Light Green' : 'Green'
 
-        text: currentlyEditing < 0 ? i18n.tr('Add server') : i18n.tr('Save changes')
+        text: currentlySelected < 0 ? i18n.tr('Add server') : i18n.tr('Save changes')
 
         onClicked: {
-            if (currentlyEditing < 0) {
+            if (currentlySelected < 0) {
                 serverList.push({
                     'name': serverName.text,
                     'url': serverAddress.text
                 })
             } else {
-                serverList[currentlyEditing]['name'] = serverName.text
-                serverList[currentlyEditing]['url'] = serverAddress.text
+                serverList[currentlySelected]['name'] = serverName.text
+                serverList[currentlySelected]['url'] = serverAddress.text
             }
             serverListChanged()
             serverAdded()

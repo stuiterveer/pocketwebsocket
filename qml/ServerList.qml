@@ -14,7 +14,7 @@ Page {
                 text: i18n.tr('Add server')
 
                 onTriggered: {
-                    currentlyEditing = -1
+                    currentlySelected = -1
                     var manageServerPage = pageStack.push(Qt.resolvedUrl('ManageServer.qml'))
                     manageServerPage.serverAdded.connect(reloadServers)
                 }
@@ -30,8 +30,7 @@ Page {
                 anchors.verticalCenter: parent.verticalCenter
             }
             onClicked: {
-                connectionDetails['name'] = name
-                connectionDetails['url'] = url
+                currentlySelected = serverIndex
                 pageStack.push(Qt.resolvedUrl('ServerConnect.qml'))
             }
             leadingActions: ListItemActions {
@@ -51,7 +50,7 @@ Page {
                     Action {
                         iconName: "edit"
                         onTriggered: {
-                            currentlyEditing = serverIndex
+                            currentlySelected = serverIndex
                             var manageServerPage = pageStack.push(Qt.resolvedUrl('ManageServer.qml'))
                             manageServerPage.serverAdded.connect(reloadServers)
                         }
@@ -59,7 +58,7 @@ Page {
                     Action {
                         iconName: "filters"
                         onTriggered: {
-                            currentlyEditing = serverIndex
+                            currentlySelected = serverIndex
                             pageStack.push(Qt.resolvedUrl('CommandList.qml'))
                         }
                     }

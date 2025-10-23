@@ -7,7 +7,7 @@ Page {
 
     header: PageHeader {
         id: header
-        title: connectionDetails['name']
+        title: serverList[currentlySelected]['name']
 
         trailingActionBar.actions: [
             Action {
@@ -179,7 +179,7 @@ Page {
     }
 
     Component.onCompleted: {
-        socket.url = connectionDetails['url']
+        socket.url = serverList[currentlySelected]['url']
         socket.active = true
     }
 }
