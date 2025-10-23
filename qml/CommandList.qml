@@ -167,7 +167,7 @@ Page {
                     rightMargin: 10
                 }
 
-                text: ping
+                text: pong
             }
 
             Label {
