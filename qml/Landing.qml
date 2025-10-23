@@ -9,7 +9,7 @@ Page {
 
     header: PageHeader {
         id: header
-        title: i18n.tr('Pocket WebSocket')
+        title: 'Pocket WebSocket'
     }
 
     TextField {
