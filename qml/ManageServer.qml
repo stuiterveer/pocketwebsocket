@@ -66,7 +66,8 @@ Page {
                     'commandList': {
                         'onConnect': {
                             'active': false,
-                            'message': ''
+                            'message': '',
+                            'suppress': false
                         },
                         'pingPong': []
                     }
