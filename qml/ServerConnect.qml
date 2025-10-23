@@ -8,6 +8,24 @@ Page {
     header: PageHeader {
         id: header
         title: connectionDetails['name']
+
+        trailingActionBar.actions: [
+            Action {
+                iconName: 'stop'
+                text: i18n.tr('Disconnect')
+
+                onTriggered: socket.active = false
+            },
+            Action {
+                iconName: 'reload'
+                text: i18n.tr('Reconnect')
+
+                onTriggered: {
+                    socket.active = false
+                    socket.active = true
+                }
+            }
+        ]
     }
 
     WebSocket {
