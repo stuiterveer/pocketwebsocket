@@ -28,12 +28,24 @@ MainView {
 
     readonly property bool isDark: theme.name === 'Lomiri.Components.Themes.SuruDark'
 
+    property var connectionDetails: {
+        'name': '',
+        'url': ''
+    }
+
+    property var serverList: [
+        {
+            'name': 'WebSocket echo',
+            'url': 'wss://echo.websocket.org'
+        }
+    ]
+
     PageStack {
         id: pageStack
         anchors.fill: parent
 
         Component.onCompleted: {
-            pageStack.push(Qt.resolvedUrl('Landing.qml'))
+            pageStack.push(Qt.resolvedUrl('ServerList.qml'))
         }
     }
 }

@@ -7,7 +7,7 @@ Page {
 
     header: PageHeader {
         id: header
-        title: 'Pocket WebSocket'
+        title: connectionDetails['name']
     }
 
     TextField {
@@ -18,7 +18,7 @@ Page {
         }
         id: websocketUrl
         placeholderText: i18n.tr('Enter WebSocket URL...')
-        text: 'wss://echo.websocket.org'
+        text: connectionDetails['url']
 
         height: units.gu(4)
     }
