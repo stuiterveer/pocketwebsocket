@@ -33,6 +33,18 @@ Page {
                 connectionDetails['url'] = url
                 pageStack.push(Qt.resolvedUrl('ServerConnect.qml'))
             }
+            leadingActions: ListItemActions {
+                actions: [
+                    Action {
+                        iconName: "edit-delete"
+                        onTriggered: {
+                            serverList.splice(serverIndex, 1)
+                            serverListChanged()
+                            reloadServers()
+                        }
+                    }
+                ]
+            }
         }
     }
 
@@ -59,7 +71,9 @@ Page {
 
         for (var i = 0; i < serverList.length; i++)
         {
-            serverModel.append(serverList[i])
+            var serverTemp = serverList[i]
+            serverTemp['serverIndex'] = i
+            serverModel.append(serverTemp)
         }
     }
 }
