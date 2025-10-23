@@ -36,23 +36,25 @@ Page {
                 messageContents: message
             })
         }
-        onStatusChanged: if (socket.status == WebSocket.Error) {
-                            console.log("Error: " + socket.errorString)
-                        } else if (socket.status == WebSocket.Open) {
-                            messageModel.append({
-                                messageType: 'connected',
-                                messageContents: socket.url.toString()
-                            })
-                            newMessage.enabled = true
-                            sendNewMessage.enabled = true
-                        } else if (socket.status == WebSocket.Closed) {
-                            newMessage.enabled = false
-                            sendNewMessage.enabled = false
-                            messageModel.append({
-                                messageType: 'disconnected',
-                                messageContents: socket.url.toString()
-                            })
-                        }
+        onStatusChanged: {
+            if (socket.status == WebSocket.Error) {
+                console.log("Error: " + socket.errorString)
+            } else if (socket.status == WebSocket.Open) {
+                messageModel.append({
+                    messageType: 'connected',
+                    messageContents: socket.url.toString()
+                })
+                newMessage.enabled = true
+                sendNewMessage.enabled = true
+            } else if (socket.status == WebSocket.Closed) {
+                newMessage.enabled = false
+                sendNewMessage.enabled = false
+                messageModel.append({
+                    messageType: 'disconnected',
+                    messageContents: socket.url.toString()
+                })
+            }
+        }
         active: false
     }
 
