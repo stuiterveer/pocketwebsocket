@@ -10,43 +10,6 @@ Page {
         title: connectionDetails['name']
     }
 
-    TextField {
-        anchors {
-            top: header.bottom
-            left: parent.left
-            right: websocketConnect.left
-        }
-        id: websocketUrl
-        placeholderText: i18n.tr('Enter WebSocket URL...')
-        text: connectionDetails['url']
-
-        height: units.gu(4)
-    }
-
-    Button {
-        anchors {
-            top: header.bottom
-            right: parent.right
-        }
-        id: websocketConnect
-
-        height: units.gu(4)
-        width: height
-        color: isDark ? 'Light Green' : 'Green'
-
-        onClicked: {
-            socket.active = false
-            socket.url = websocketUrl.text
-            socket.active = true
-        }
-    }
-
-    Icon {
-        name: 'tick'
-        anchors.fill: websocketConnect
-        color: isDark ? 'Jet' : 'White'
-    }
-
     WebSocket {
         id: socket
         onTextMessageReceived: {
@@ -127,7 +90,7 @@ Page {
 
     ListView {
         anchors {
-            top: websocketUrl.bottom
+            top: header.bottom
             left: parent.left
             right: parent.right
             bottom: newMessage.top
@@ -195,5 +158,10 @@ Page {
         id: keyboard
         height: LomiriApplication.inputMethod.keyboardRectangle.height
         color: backgroundColor
+    }
+
+    Component.onCompleted: {
+        socket.url = connectionDetails['url']
+        socket.active = true
     }
 }
