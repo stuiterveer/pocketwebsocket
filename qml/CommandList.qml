@@ -17,6 +17,7 @@ Page {
                     serverList[currentlySelected]['commandList']['onConnect']['active'] = enableSendOnConnect.checked
                     serverList[currentlySelected]['commandList']['onConnect']['message'] = toSendOnConnect.text
                     serverList[currentlySelected]['commandList']['onConnect']['suppress'] = hideSendOnConnect.checked
+                    serverListChanged()
                     pageStack.pop('CommandList.qml')
                 }
             }
