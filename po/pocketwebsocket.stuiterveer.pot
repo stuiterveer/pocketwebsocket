@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pocketwebsocket.stuiterveer\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-10-23 08:59+0000\n"
+"POT-Creation-Date: 2025-10-23 09:00+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,11 +17,11 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../qml/Landing.qml:22
+#: ../qml/Landing.qml:20
 msgid "Enter WebSocket URL..."
 msgstr ""
 
-#: ../qml/Landing.qml:155
+#: ../qml/Landing.qml:153
 msgid "Type new message..."
 msgstr ""
 
