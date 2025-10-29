@@ -2,7 +2,7 @@ import QtQuick 2.7
 import Lomiri.Components 1.3
 
 Page {
-    property var pingPongList: serverList[currentlySelected]['commandList']['pingPong']
+    property var pingPongList: []
 
     anchors.fill: parent
 
@@ -252,14 +252,17 @@ Page {
             id: commandModel
         }
         delegate: commandDelegate
+    }
 
-        Component.onCompleted: {
-            for (var i = 0; i < pingPongList.length; i++)
-            {
-                var pingPongTemp = pingPongList[i]
-                pingPongTemp['pingPongIndex'] = i
-                commandModel.append(pingPongTemp)
-            }
+    Component.onCompleted: {
+        commandModel.clear()
+
+        for (var i = 0; i < serverList[currentlySelected]['commandList']['pingPong'].length; i++)
+        {
+            pingPongList.push(serverList[currentlySelected]['commandList']['pingPong'][i])
+            var pingPongTemp = pingPongList[i]
+            pingPongTemp['pingPongIndex'] = i
+            commandModel.append(pingPongTemp)
         }
     }
 }
