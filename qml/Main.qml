@@ -18,6 +18,8 @@ import QtQuick 2.7
 import Lomiri.Components 1.3
 import Qt.labs.settings 1.0
 
+import 'js/migrations.js' as Migrations
+
 MainView {
     id: root
     objectName: 'mainView'
@@ -43,6 +45,7 @@ MainView {
         anchors.fill: parent
 
         Component.onCompleted: {
+            Migrations.run()
             pageStack.push(Qt.resolvedUrl('ServerList.qml'))
         }
     }
