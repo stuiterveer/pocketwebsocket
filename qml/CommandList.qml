@@ -121,7 +121,12 @@ Page {
                         iconName: "edit-delete"
                         onTriggered: {
                             pingPongList.splice(pingPongIndex, 1)
-                            commandModel.remove(pingPongIndex, 1)
+                            commandModel.clear()
+                            for (var i = 0; i < pingPongList.length; i++) {
+                                var pingPongTemp = pingPongList[i]
+                                pingPongTemp['pingPongIndex'] = i
+                                commandModel.append(pingPongTemp)
+                            }
                         }
                     }
                 ]
