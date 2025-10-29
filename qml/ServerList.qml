@@ -88,9 +88,6 @@ Page {
     function reloadServers() {
         serverModel.clear()
 
-        console.log("done with everything")
-
-
         for (var i = 0; i < serverList.length; i++)
         {
             var serverTemp = serverList[i]
