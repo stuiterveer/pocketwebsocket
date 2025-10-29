@@ -88,19 +88,6 @@ Page {
     function reloadServers() {
         serverModel.clear()
 
-        //Qt.setApplicationVersion('1.2.3')
-        //console.log(JSON.stringify(Qt.application))
-
-        var xhr = new XMLHttpRequest;
-        xhr.open("GET", "../manifest.json", true)
-        xhr.onreadystatechange = function () {
-            if (xhr.readyState === XMLHttpRequest.DONE) {
-                //console.log(xhr.responseText);
-                console.log("done with request")
-            }
-        }
-        xhr.send()
-
         console.log("done with everything")
 
 
