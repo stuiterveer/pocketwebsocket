@@ -115,6 +115,18 @@ Page {
         ListItem {
             height: pingContent.implicitHeight + pongContent.implicitHeight + hidePing.implicitHeight
 
+            leadingActions: ListItemActions {
+                actions: [
+                    Action {
+                        iconName: "edit-delete"
+                        onTriggered: {
+                            pingPongList.splice(pingPongIndex, 1)
+                            commandModel.remove(pingPongIndex, 1)
+                        }
+                    }
+                ]
+            }
+
             CheckBox {
                 id: enablePingPong
                 anchors {
