@@ -75,6 +75,7 @@ Page {
         TextField {
             id: serverAddress
             text: currentlySelected < 0 ? '' : serverList[currentlySelected]['url']
+            inputMethodHints: Qt.ImhUrlCharactersOnly | Qt.ImhNoPredictiveText
         }
     }
 }
