@@ -18,7 +18,7 @@ Page {
                 onTriggered: {
                     if (currentlySelected < 0) {
                         serverList.push({
-                            'name': serverName.text,
+                            'name': (serverName.text != '' ? serverName.text : serverName.placeholderText),
                             'url': serverAddress.text,
                             'commandList': {
                                 'onConnect': {
@@ -30,7 +30,7 @@ Page {
                             }
                         })
                     } else {
-                        serverList[currentlySelected]['name'] = serverName.text
+                        serverList[currentlySelected]['name'] = (serverName.text != '' ? serverName.text : serverName.placeholderText)
                         serverList[currentlySelected]['url'] = serverAddress.text
                     }
                     serverListChanged()
@@ -56,6 +56,7 @@ Page {
         TextField {
             id: serverName
             text: currentlySelected < 0 ? '' : serverList[currentlySelected]['name']
+            placeholderText: /^wss?:\/\/([^\/\?]+)/.exec(serverAddress.text)[1]
         }
     }
 
