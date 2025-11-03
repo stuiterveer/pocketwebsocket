@@ -38,7 +38,7 @@ Page {
                 var currentItem = serverList[currentlySelected]['commandList']['pingPong'][i]
                 if (currentItem['active']){
                     if (message == currentItem['ping']) {
-                        if (!currentItem['suppressPing']) {
+                        if (!currentItem['suppressPing'] && !pingPongFound) {
                             messageModel.append({
                                 messageType: 'received',
                                 messageContents: message
@@ -54,7 +54,6 @@ Page {
                         }
 
                         pingPongFound = true
-                        break
                     }
                 }
             }
