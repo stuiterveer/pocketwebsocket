@@ -26,8 +26,11 @@ Page {
         id: serverDelegate
         ListItem {
             Label {
+                anchors {
+                    verticalCenter: parent.verticalCenter
+                    horizontalCenter: parent.horizontalCenter
+                }
                 text: name
-                anchors.verticalCenter: parent.verticalCenter
             }
             onClicked: {
                 currentlySelected = serverIndex
