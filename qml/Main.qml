@@ -30,6 +30,7 @@ MainView {
     height: units.gu(75)
 
     readonly property bool isDark: theme.name === 'Lomiri.Components.Themes.SuruDark'
+    readonly property int generalMargin: 10
 
     property var currentlySelected: -1
 

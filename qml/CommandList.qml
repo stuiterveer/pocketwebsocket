@@ -58,7 +58,7 @@ Page {
             anchors {
                 left: parent.left
                 verticalCenter: parent.verticalCenter
-                leftMargin: 10
+                leftMargin: generalMargin
             }
 
             checked: serverList[currentlySelected]['commandList']['onConnect']['active']
@@ -68,7 +68,7 @@ Page {
             id: labelSendOnConnect
             anchors {
                 left: enableSendOnConnect.right
-                leftMargin: 10
+                leftMargin: generalMargin
             }
 
             text: i18n.tr('After connecting, send')
@@ -80,8 +80,8 @@ Page {
                 left: enableSendOnConnect.right
                 right: parent.right
                 top: labelSendOnConnect.bottom
-                leftMargin: 10
-                rightMargin: 10
+                leftMargin: generalMargin
+                rightMargin: generalMargin
             }
 
             text: serverList[currentlySelected]['commandList']['onConnect']['message']
@@ -92,7 +92,7 @@ Page {
             anchors {
                 left: enableSendOnConnect.right
                 top: toSendOnConnect.bottom
-                leftMargin: 10
+                leftMargin: generalMargin
             }
 
             checked: serverList[currentlySelected]['commandList']['onConnect']['suppress']
@@ -102,7 +102,7 @@ Page {
             anchors {
                 left: hideSendOnConnect.right
                 top: toSendOnConnect.bottom
-                leftMargin: 10
+                leftMargin: generalMargin
             }
 
             text: i18n.tr('Hide message')
@@ -137,7 +137,7 @@ Page {
                 anchors {
                     left: parent.left
                     verticalCenter: parent.verticalCenter
-                    leftMargin: 10
+                    leftMargin: generalMargin
                 }
 
                 checked: active
@@ -149,7 +149,7 @@ Page {
                 id: labelPing
                 anchors {
                     left: enablePingPong.right
-                    leftMargin: 10
+                    leftMargin: generalMargin
                 }
 
                 text: i18n.tr('When receiving')
@@ -161,8 +161,8 @@ Page {
                     left: labelPing.right
                     right: parent.right
                     top: parent.top
-                    leftMargin: 10
-                    rightMargin: 10
+                    leftMargin: generalMargin
+                    rightMargin: generalMargin
                 }
 
                 text: ping
@@ -175,7 +175,7 @@ Page {
                 anchors {
                     left: enablePingPong.right
                     top: pingContent.bottom
-                    leftMargin: 10
+                    leftMargin: generalMargin
                 }
 
                 text: i18n.tr('Send back')
@@ -187,8 +187,8 @@ Page {
                     left: labelPing.right
                     right: parent.right
                     top: pingContent.bottom
-                    leftMargin: 10
-                    rightMargin: 10
+                    leftMargin: generalMargin
+                    rightMargin: generalMargin
                 }
 
                 text: pong
@@ -201,7 +201,7 @@ Page {
                 anchors {
                     left: enablePingPong.right
                     top: pongContent.bottom
-                    leftMargin: 10
+                    leftMargin: generalMargin
                 }
 
                 text: i18n.tr('Hide')
@@ -212,7 +212,7 @@ Page {
                 anchors {
                     left: hideLabel.right
                     top: pongContent.bottom
-                    leftMargin: 10
+                    leftMargin: generalMargin
                 }
 
                 checked: suppressPing
@@ -225,7 +225,7 @@ Page {
                 anchors {
                     left: hidePing.right
                     top: pongContent.bottom
-                    leftMargin: 10
+                    leftMargin: generalMargin
                 }
 
                 text: 'Ping'
@@ -236,7 +236,7 @@ Page {
                 anchors {
                     left: hidePingLabel.right
                     top: pongContent.bottom
-                    leftMargin: 10
+                    leftMargin: generalMargin
                 }
 
                 checked: suppressPong
@@ -249,7 +249,7 @@ Page {
                 anchors {
                     left: hidePong.right
                     top: pongContent.bottom
-                    leftMargin: 10
+                    leftMargin: generalMargin
                 }
 
                 text: 'Pong'
