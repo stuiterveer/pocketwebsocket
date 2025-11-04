@@ -46,7 +46,9 @@ Page {
             top: header.bottom
             bottom: serverName.bottom
             left: parent.left
+            leftMargin: generalMargin
         }
+        verticalAlignment: Text.AlignVCenter
         id: serverNameLabel
         text: i18n.tr('Server name')
     }
@@ -56,6 +58,8 @@ Page {
             top: header.bottom
             left: serverNameLabel.width > serverAddressLabel.width ? serverNameLabel.right : serverAddressLabel.right
             right: parent.right
+            leftMargin: generalMargin
+            rightMargin: generalMargin
         }
         id: serverName
         text: currentlySelected < 0 ? '' : serverList[currentlySelected]['name']
@@ -67,7 +71,9 @@ Page {
             top: serverAddress.top
             bottom: serverAddress.bottom
             left: parent.left
+            leftMargin: generalMargin
         }
+        verticalAlignment: Text.AlignVCenter
         id: serverAddressLabel
         text: i18n.tr('Server address')
     }
@@ -77,6 +83,7 @@ Page {
             top: serverName.bottom
             left: serverName.left
             right: parent.right
+            rightMargin: generalMargin
         }
         id: serverAddress
         text: currentlySelected < 0 ? '' : serverList[currentlySelected]['url']
