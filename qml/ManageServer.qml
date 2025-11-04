@@ -41,41 +41,47 @@ Page {
         ]
     }
 
-    Row {
+    Label {
         anchors {
             top: header.bottom
+            bottom: serverName.bottom
             left: parent.left
-            right: parent.right
         }
-        id: serverNameRow
-
-        Label {
-            text: i18n.tr('Server name')
-        }
-
-        TextField {
-            id: serverName
-            text: currentlySelected < 0 ? '' : serverList[currentlySelected]['name']
-            placeholderText: /^wss?:\/\/([^\/\?]+)/.exec(serverAddress.text)[1]
-        }
+        id: serverNameLabel
+        text: i18n.tr('Server name')
     }
 
-    Row {
+    TextField {
         anchors {
-            top:serverNameRow.bottom
-            left: parent.left
+            top: header.bottom
+            left: serverNameLabel.width > serverAddressLabel.width ? serverNameLabel.right : serverAddressLabel.right
             right: parent.right
         }
-        id: serverAddressRow
-
-        Label {
-            text: i18n.tr('Server address')
-        }
-
-        TextField {
-            id: serverAddress
-            text: currentlySelected < 0 ? '' : serverList[currentlySelected]['url']
-            inputMethodHints: Qt.ImhUrlCharactersOnly | Qt.ImhNoPredictiveText
-        }
+        id: serverName
+        text: currentlySelected < 0 ? '' : serverList[currentlySelected]['name']
+        placeholderText: /^wss?:\/\/([^\/\?]+)/.exec(serverAddress.text)[1]
     }
+
+    Label {
+        anchors {
+            top: serverAddress.top
+            bottom: serverAddress.bottom
+            left: parent.left
+        }
+        id: serverAddressLabel
+        text: i18n.tr('Server address')
+    }
+
+    TextField {
+        anchors {
+            top: serverName.bottom
+            left: serverName.left
+            right: parent.right
+        }
+        id: serverAddress
+        text: currentlySelected < 0 ? '' : serverList[currentlySelected]['url']
+        inputMethodHints: Qt.ImhUrlCharactersOnly | Qt.ImhNoPredictiveText
+    }
+
+    Component.onCompleted: console.log(serverAddressLabel.width)
 }
