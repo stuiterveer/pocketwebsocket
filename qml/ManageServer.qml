@@ -63,7 +63,7 @@ Page {
         }
         id: serverName
         text: currentlySelected < 0 ? '' : serverList[currentlySelected]['name']
-        placeholderText: /^wss?:\/\/([^\/\?]+)/.exec(serverAddress.text)[1]
+        placeholderText: (/^wss?:\/\/([^\/\?]+)/.exec(serverAddress.text) || ['',''])[1]
     }
 
     Label {
