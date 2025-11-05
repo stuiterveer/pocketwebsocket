@@ -51,7 +51,7 @@ Page {
             left: parent.left
             right: parent.right
         }
-        height: labelSendOnConnect.implicitHeight + toSendOnConnect.implicitHeight + hideSendOnConnect.implicitHeight
+        height: labelSendOnConnect.implicitHeight + toSendOnConnect.implicitHeight + hideSendOnConnect.implicitHeight + 2 * generalMargin
 
         CheckBox {
             id: enableSendOnConnect
@@ -68,7 +68,9 @@ Page {
             id: labelSendOnConnect
             anchors {
                 left: enableSendOnConnect.right
+                top: parent.top
                 leftMargin: generalMargin
+                topMargin: generalMargin
             }
 
             text: i18n.tr('After connecting, send')
@@ -113,7 +115,7 @@ Page {
         id: commandDelegate
 
         ListItem {
-            height: pingContent.implicitHeight + pongContent.implicitHeight + hidePing.implicitHeight
+            height: pingContent.implicitHeight + pongContent.implicitHeight + hidePing.implicitHeight + 2 * generalMargin
 
             leadingActions: ListItemActions {
                 actions: [
@@ -149,7 +151,9 @@ Page {
                 id: labelPing
                 anchors {
                     left: enablePingPong.right
+                    top: parent.top
                     leftMargin: generalMargin
+                    topMargin: generalMargin
                 }
 
                 text: i18n.tr('When receiving')
@@ -163,6 +167,7 @@ Page {
                     top: parent.top
                     leftMargin: generalMargin
                     rightMargin: generalMargin
+                    topMargin: generalMargin
                 }
 
                 text: ping
