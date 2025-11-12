@@ -28,7 +28,9 @@ Page {
             Label {
                 anchors {
                     verticalCenter: parent.verticalCenter
-                    horizontalCenter: parent.horizontalCenter
+                    left: parent.left
+                    right: parent.right
+                    leftMargin: generalMargin
                 }
                 text: name
             }
