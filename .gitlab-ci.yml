@@ -40,7 +40,7 @@ publish:
   rules:
   - if: $CI_COMMIT_TITLE == "Bump version"
   script:
-  - 'clickable publish --arch amd64'
+  - 'clickable publish --arch all'
   dependencies:
   - build
   artifacts:
