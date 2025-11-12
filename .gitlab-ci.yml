@@ -23,6 +23,8 @@ stages:
 ###############################################################################
 build:
   stage: build
+  rules:
+  - if: $CI_COMMIT_MESSAGE == "Bump version"
   script:
   - clickable build
   artifacts:
@@ -38,7 +40,7 @@ publish:
   rules:
   - if: $CI_COMMIT_MESSAGE == "Bump version"
   script:
-  - 'clickable publish --arch amd64
+  - 'clickable publish --arch amd64'
   dependencies:
   - build
   artifacts:
